@@ -2,6 +2,7 @@ import Lottie from 'lottie-react';
 import React, { useContext } from 'react';
 import registerLottieData from '../../assets/lottie/Register.json'
 import AuthContext from '../../context/AuthContext/AuthContext';
+import SocialLogIn from '../shared/SocialLogIn';
 
 
 const Register = () => {
@@ -27,7 +28,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero  min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-96">
                     <Lottie animationData={registerLottieData}></Lottie>
@@ -65,6 +66,7 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                    <SocialLogIn></SocialLogIn>
                 </div>
             </div>
         </div>

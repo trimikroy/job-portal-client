@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
-
+import jobLogo from '../../assets/images/job-logo.png'
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
 
@@ -15,9 +15,11 @@ const Navbar = () => {
         })
     }
     const links = <>
-        <li><a>Item 1</a></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        {/* <li><NavLink to=''>Home</NavLink></li>
+        <li><NavLink to=''>Home</NavLink></li> */}
 
-        <li><a>Item 3</a></li>
+        
     </>
     return (
         <div className="navbar bg-base-100">
@@ -43,7 +45,10 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link to='/' className="flex items-center">
+                    <img className='w-12' src={jobLogo} alt="" />
+                    <h3 className='text-2xl font-bold'>Job Portal</h3>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -55,12 +60,12 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <button onClick={handleSignOut} className="btn">Sign-Out</button>
+                            <button onClick={handleSignOut} className="btn btn-neutral">Sign-Out</button>
                         </>
                         :
                         <>
                             <Link to='/register' >Register</Link>
-                            <Link to='/signIn'>  <button className="btn">Sign In</button></Link>
+                            <Link to='/signIn'>  <button className="btn btn-success text-white">Sign In</button></Link>
                         </>
                 }
 

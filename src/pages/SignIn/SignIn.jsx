@@ -4,6 +4,7 @@ import signInLottieData from '../../assets/lottie/SignIn.json'
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { signOut } from 'firebase/auth';
 import auth from '../../firebase/firebase.init';
+import SocialLogIn from '../shared/SocialLogIn';
 
 
 const SignIn = () => {
@@ -31,7 +32,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero  min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-96">
                     <Lottie animationData={signInLottieData}></Lottie>
@@ -69,6 +70,7 @@ const SignIn = () => {
                             <button className="btn btn-primary">SingIn</button>
                         </div>
                     </form>
+                    <SocialLogIn></SocialLogIn>
                 </div>
             </div>
         </div>
