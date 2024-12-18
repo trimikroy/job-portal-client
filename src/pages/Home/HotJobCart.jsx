@@ -25,8 +25,8 @@ const HotJobCart = ({ job }) => {
                 <p>{description}</p>
                 <div className='flex  gap-2 flex-wrap cursor-pointer'>
                     {
-                        requirements.map(skill =>
-                            <p className=' rounded-md font-bold text-gray-400 bg-white text-xs text-center p-1 hover:text-blue-500 hover:bg-green-200'>{skill}</p>
+                        requirements.map((skill, index) =>
+                            <p key={index} className=' rounded-md font-bold text-gray-400 bg-white text-xs text-center p-1 hover:text-blue-500 hover:bg-green-200'>{skill}</p>
                         )
                     }
                 </div>
