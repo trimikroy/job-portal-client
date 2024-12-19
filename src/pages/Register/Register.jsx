@@ -3,11 +3,13 @@ import React, { useContext } from 'react';
 import registerLottieData from '../../assets/lottie/Register.json'
 import AuthContext from '../../context/AuthContext/AuthContext';
 import SocialLogIn from '../shared/SocialLogIn';
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -21,6 +23,7 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             console.log(result.user)
+            navigate('/')
         })
         .catch(error => {
             console.log(error.message)
